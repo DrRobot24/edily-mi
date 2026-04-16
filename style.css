@@ -106,24 +106,17 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1.2rem 0;
   z-index: 1000;
-  transition: all 0.5s var(--ease-out-expo);
-  background-color: transparent; /* Transparent immediately */
-  border-bottom: 1px solid transparent; 
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: transform 0.5s var(--ease-out-expo), background-color 0.4s ease, border-bottom 0.4s ease;
 }
 
-/* On scroll, it becomes a solid white bar */
-.navbar.scrolled {
-  padding: 1rem 0;
+.navbar.visible {
+  transform: translateY(0);
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.navbar.scrolled .logo,
-.navbar.scrolled .logo span,
-.navbar.scrolled .nav-link {
-  color: #1a1a1a;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .navbar-container {
@@ -135,15 +128,20 @@ a {
   padding: 0 5vw;
 }
 
-/* Navbar Colors - INITIAL STATE (Transparent background, white text/logo) */
+/* Navbar Colors */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
 .nav-link {
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #ffffff; /* White text when transparent */
-  transition: color 0.3s ease;
+  color: #ffffff;
+  transition: color 0.4s ease;
   position: relative;
 }
 
@@ -155,38 +153,38 @@ a {
   bottom: -4px;
   left: 0;
   background-color: #ffffff;
-  transition: width 0.4s var(--ease-out-expo), background-color 0.3s ease;
+  transition: width 0.4s var(--ease-out-expo), background-color 0.4s ease;
 }
 
 .brand-logo {
-  height: 110px; /* Aumentato drasticamente */
-  max-width: 300px;
+  height: 150px;
+  max-width: 350px;
   width: auto;
   object-fit: contain;
-  transition: all 0.3s ease;
-  /* Transform the physical logo to pure white to match transparent background */
   filter: brightness(0) invert(1);
+  transition: filter 0.4s ease;
 }
 
 .mobile-menu-btn span {
-  background: #ffffff; /* White menu on transparent */
+  background: #ffffff;
+  transition: background 0.4s ease;
 }
 
-/* Navbar Colors - SCROLLED STATE (White background, dark text/logo) */
-.navbar.scrolled .nav-link {
+/* Navbar visible state (scrolled) */
+.navbar.visible .nav-link {
   color: #1a1a1a;
 }
 
-.navbar.scrolled .nav-link::after {
+.navbar.visible .nav-link::after {
   background-color: #1a1a1a;
 }
 
-.navbar.scrolled .brand-logo {
-  filter: none; /* Restore original colored logo */
+.navbar.visible .brand-logo {
+  filter: none;
 }
 
-.navbar.scrolled .mobile-menu-btn span {
-  background: #000;
+.navbar.visible .mobile-menu-btn span {
+  background: #1a1a1a;
 }
 
 .nav-link:hover::after {
@@ -265,15 +263,15 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%; /* For parallax */
+  height: 100%;
   z-index: -2;
 }
 
-.hero-bg img {
+.hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateY(-10%); /* Start point */
+  display: block;
 }
 
 .hero-overlay {
@@ -302,6 +300,16 @@ a {
   max-width: 500px;
   margin-top: 2rem;
   font-size: 1.2rem;
+}
+
+.hero-payoff {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
 }
 
 .hero-scroll-indicator {

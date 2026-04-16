@@ -21,17 +21,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.config({ ignoreMobileResize: true });
 
+// Sync Lenis with ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+
 // Dark mode tracking for navbar
 const body = document.querySelector('body');
 const darkSections = document.querySelectorAll('.dark-section, .hero, .footer');
 const navbar = document.querySelector('.navbar');
 
-// Check if logo needs to change color
-ScrollTrigger.create({
-  start: 50,
-  end: 999999,
-  toggleClass: {className: 'scrolled', targets: '.navbar'}
-});
+// Navbar slides down when user starts scrolling
+const heroSection = document.querySelector('#hero');
+const navbarObserver = new IntersectionObserver(
+  ([entry]) => {
+    navbar.classList.toggle('visible', !entry.isIntersecting);
+  },
+  { threshold: 0.85 }
+);
+navbarObserver.observe(heroSection);
 
 darkSections.forEach(section => {
   ScrollTrigger.create({
