@@ -429,6 +429,8 @@ a {
   grid-template-columns: 7fr 5fr;
   gap: 4rem;
   align-items: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 70vh;
 }
 
 .project-card:nth-child(even) {
@@ -444,12 +446,14 @@ a {
   position: relative;
   overflow: hidden;
   height: 70vh;
+  contain: layout;
 }
 
 .project-img {
   width: 100%;
   height: 120%;
   object-fit: cover;
+  will-change: transform;
 }
 
 .placeholder-dark {
@@ -595,15 +599,13 @@ a {
 }
 
 .footer-logo {
-  font-family: var(--font-heading);
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
 }
-.footer-logo span {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  letter-spacing: 0.3em;
-  color: var(--color-accent);
+.footer-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer-copy {
@@ -618,10 +620,17 @@ a {
 }
 
 .footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: color 0.3s;
+  color: #fff;
+}
+.footer-social a svg {
+  flex-shrink: 0;
 }
 .footer-social a:hover {
   color: var(--color-accent);
