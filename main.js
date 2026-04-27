@@ -79,26 +79,18 @@ tl.from('.navbar', {
   ease: 'power4.out',
   delay: 0.2
 })
-.from('.hero-content h1 span', {
-  y: 150,
-  skewY: 10,
-  opacity: 0,
-  duration: 1.8,
-  stagger: 0.2,
-  ease: 'power4.out'
-}, "-=1.2")
-.from('.hero-payoff', {
-  y: 20,
-  opacity: 0,
-  duration: 1.5,
-  ease: 'power3.out'
-}, "-=1.5")
-.from('.hero-scroll-indicator', {
-  y: 50,
-  opacity: 0,
-  duration: 1.5,
-  ease: 'power3.out'
-}, "-=1.5");
+.fromTo('.hero-content h1 span',
+  { y: 150, skewY: 10, opacity: 0 },
+  { y: 0, skewY: 0, opacity: 1, duration: 1.8, stagger: 0.2, ease: 'power4.out' },
+  "-=1.2")
+.fromTo('.hero-payoff',
+  { y: 20, opacity: 0 },
+  { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
+  "-=1.5")
+.fromTo('.hero-scroll-indicator',
+  { y: 50, opacity: 0 },
+  { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
+  "-=1.5");
 
 // Parallax Images
 gsap.utils.toArray('.parallax-img').forEach(img => {
