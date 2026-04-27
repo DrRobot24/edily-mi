@@ -353,7 +353,6 @@ a {
 .hero-content h1 span {
   display: block;
   overflow: hidden;
-  opacity: 0;
 }
 
 .hero-subtitle {
@@ -372,7 +371,6 @@ a {
   text-transform: uppercase;
   margin-top: 1.5rem;
   text-align: center;
-  opacity: 0;
 }
 
 .hero-scroll-indicator {

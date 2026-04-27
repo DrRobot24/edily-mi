@@ -67,6 +67,11 @@ darkSections.forEach(section => {
 // Initial Load Animation
 const tl = gsap.timeline();
 
+// Hide hero elements immediately before any frame renders (prevents flash)
+gsap.set('.hero-content h1 span', { opacity: 0, y: 150, skewY: 10 });
+gsap.set('.hero-payoff', { opacity: 0, y: 20 });
+gsap.set('.hero-scroll-indicator', { opacity: 0, y: 50 });
+
 tl.from('.navbar', {
   y: -50,
   opacity: 0,
