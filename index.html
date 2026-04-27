@@ -8,8 +8,8 @@
     <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Premium Web Fonts: Cinzel (elegant display) & Montserrat (modern sans) & Cormorant Garamond (hero display) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Premium Web Fonts: Cinzel (elegant display) & Montserrat (modern sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -17,7 +17,7 @@
     <nav class="navbar">
       <div class="navbar-container">
         <a href="#hero" class="logo-wrapper">
-          <img src="/images/Logo.png" alt="Edily Milano" class="brand-logo">
+          <img src="/images/logo_ok.png" alt="Edily Milano" class="brand-logo">
         </a>
         <div class="nav-links">
           <a href="#about" class="nav-link">About Us</a>
@@ -37,13 +37,17 @@
       <!-- HERO SECTION -->
       <section id="hero" class="hero section">
         <div class="hero-bg">
-          <video class="hero-video" autoplay muted loop playsinline>
-            <source src="/images/cassia.mp4" type="video/mp4">
+          <video class="hero-video" id="hero-video" autoplay muted loop playsinline>
+            <source src="/images/video.mp4" type="video/mp4">
           </video>
           <div class="hero-overlay"></div>
         </div>
+        <button class="video-sound-btn" id="video-sound-btn" aria-label="Attiva audio">
+          <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>
         <div class="container hero-content">
-          <h1 class="reveal-text" style="font-size: clamp(4.5rem, 10vw, 9rem); font-family: 'Cormorant Garamond', serif; font-weight: 300; letter-spacing: 0.04em;"><span>ONE VISION.</span><br><span>ONE SYSTEM.</span></h1>
+          <h1 class="reveal-text hero-title"><span><strong>ONE</strong> VISION.</span><br><span><strong>ONE</strong> SYSTEM.</span></h1>
           <p class="hero-payoff reveal-text delay-1">Built around a single ideal.</p>
           <div class="hero-scroll-indicator reveal-text delay-2">
             <span>Scroll</span>
@@ -55,7 +59,7 @@
       <!-- PAYOFF DEDICATED SECTION -->
       <section class="payoff-section section">
         <div class="container text-center">
-          <h3 class="payoff-huge scroll-reveal delay-1">L'Arte del <br> Costruire. Milano.</h3>
+          <h3 class="payoff-huge scroll-reveal delay-1">Your Building <br> Solutions.</h3>
         </div>
       </section>
 
@@ -76,7 +80,14 @@
                   <p>Ridefiniamo il modo di vivere e concepire l'architettura. Uniamo design d'impatto ad un'esecuzione impeccabile, garantendo tempistiche certe e soluzioni all'avanguardia.</p>
                 </div>
               </div>
-              <a href="#contatti" class="btn-primary mt-4">Il nostro sistema</a>
+              <div class="lavora-wrapper mt-4">
+                <h3 class="mv-title">Lavora con Noi</h3>
+                <p class="lavora-desc">Entra a far parte del team Edily o proponi una partnership strategica. Scegli il percorso più adatto a te.</p>
+                <div class="lavora-btns">
+                  <button class="btn-primary" id="btn-open-dipendente">Candidatura</button>
+                  <button class="btn-outline" id="btn-open-partner">Partnership</button>
+                </div>
+              </div>
             </div>
             <div class="about-image-wrapper scroll-reveal">
               <img src="/images/2.jpeg" alt="Edily Interior Architecture" class="about-image parallax-img">
@@ -96,7 +107,7 @@
             <!-- Project 1 -->
             <div class="project-card scroll-reveal">
               <div class="project-img-wrapper">
-                <img src="/images/3.jpeg" alt="Villa Nera Milano" class="project-img parallax-img-slow" loading="lazy" decoding="async">
+                <img src="/images/3.jpeg" alt="Villa Nera Milano" class="project-img parallax-img-slow">
                 <div class="project-overlay"></div>
               </div>
               <div class="project-info">
@@ -107,7 +118,7 @@
             <!-- Project 2 -->
             <div class="project-card scroll-reveal" style="transition-delay: 0.1s;">
               <div class="project-img-wrapper">
-                <img src="/images/4.jpeg" alt="Torre Skyline" class="project-img parallax-img-slow" loading="lazy" decoding="async">
+                <img src="/images/4.jpeg" alt="Torre Skyline" class="project-img parallax-img-slow">
                 <div class="project-overlay"></div>
               </div>
               <div class="project-info">
@@ -118,7 +129,7 @@
             <!-- Project 3 -->
             <div class="project-card scroll-reveal" style="transition-delay: 0.1s;">
               <div class="project-img-wrapper">
-                <img src="/images/5.jpeg" alt="Luce Milano" class="project-img parallax-img-slow" loading="lazy" decoding="async">
+                <img src="/images/5.jpeg" alt="Luce Milano" class="project-img parallax-img-slow">
                 <div class="project-overlay"></div>
               </div>
               <div class="project-info">
@@ -129,7 +140,7 @@
             <!-- Project 4 -->
             <div class="project-card scroll-reveal" style="transition-delay: 0.1s;">
               <div class="project-img-wrapper">
-                <img src="/images/7.jpeg" alt="Domus" class="project-img parallax-img-slow" loading="lazy" decoding="async">
+                <img src="/images/7.jpeg" alt="Domus " class="project-img parallax-img-slow">
                 <div class="project-overlay"></div>
               </div>
               <div class="project-info">
@@ -181,25 +192,35 @@
                 </div>
                 <div class="contact-block">
                   <h4>Contatti</h4>
-                  <p>Email: edilymilano@gmail.com</p>
+                  <p>Email: edilymilano@gmail.com<br>Cell: 392.393 0476 &nbsp;|&nbsp; Tel: 02.82065770</p>
+                </div>
+                <div class="contact-block">
+                  <h4>Dati Societari</h4>
+                  <p>Edily srls &mdash; P.IVA/C.F. 13609240968<br>Cod. Univoco: W7YVJK9</p>
                 </div>
               </div>
             </div>
             <div class="contatti-form scroll-reveal">
-              <form class="luxury-form" onsubmit="event.preventDefault();">
+              <div data-fs-success class="form-success-contatti" hidden>
+                <p style="color:#A68B61;font-family:var(--font-body);font-size:1rem;letter-spacing:0.05em;">Messaggio inviato. Ti contatteremo presto.</p>
+              </div>
+              <div data-fs-error style="color:#c0392b;font-size:0.85rem;margin-bottom:1rem;"></div>
+              <form class="luxury-form" id="form-contatti">
+                <input type="hidden" name="_subject" value="Nuova richiesta contatto — Edily">
                 <div class="form-group">
-                  <input type="text" id="name" required placeholder="Nome e Cognome">
+                  <input type="text" id="name" name="nome" required placeholder="Nome e Cognome" data-fs-field>
                   <label for="name">Nome e Cognome</label>
                 </div>
                 <div class="form-group">
-                  <input type="email" id="email" required placeholder="Email">
+                  <input type="email" id="email" name="email" required placeholder="Email" data-fs-field>
                   <label for="email">Indirizzo Email</label>
+                  <span data-fs-error="email" style="color:#c0392b;font-size:0.8rem;"></span>
                 </div>
                 <div class="form-group">
-                  <textarea id="message" required placeholder="Parlaci del tuo progetto" rows="4"></textarea>
+                  <textarea id="message" name="messaggio" required placeholder="Parlaci del tuo progetto" rows="4" data-fs-field></textarea>
                   <label for="message">Il tuo Messaggio</label>
                 </div>
-                <button type="submit" class="btn-primary">Invia Richiesta</button>
+                <button type="submit" class="btn-primary" data-fs-submit-btn>Invia Richiesta</button>
               </form>
             </div>
           </div>
@@ -210,25 +231,183 @@
       <footer class="footer">
         <div class="container footer-container">
           <div class="footer-logo">
-            <img src="/images/logo_white.jpeg" alt="Edily Milano" class="footer-logo-img">
+            <img src="/images/logo_ok.png" alt="Edily Milano" class="footer-logo-img">
           </div>
-          <div class="footer-copy">
-            &copy; 2026 Edily srls — C.F./P.IVA 13609240968<br>
-            Via Eleonora Fonseca Pimentel, 18 — 20127 Milano (MI)
-          </div>
+          <div class="footer-copy">&copy; 2026 Edily srls &mdash; P.IVA 13609240968<br>Via Eleonora Fonseca Pimentel, 18 &mdash; 20127 Milano (MI)</div>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="#" aria-label="Instagram" class="footer-social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
               <span>Instagram</span>
             </a>
-            <a href="#" aria-label="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="#" aria-label="LinkedIn" class="footer-social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               <span>LinkedIn</span>
             </a>
           </div>
         </div>
       </footer>
     </main>
+
+    <!-- MODAL: CANDIDATURA DIPENDENTE / OPERAIO -->
+    <div class="modal-overlay" id="modal-dipendente" role="dialog" aria-modal="true" aria-labelledby="modal-dip-title">
+      <div class="modal-container">
+        <button class="modal-close" id="close-modal-dipendente" aria-label="Chiudi">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="modal-body">
+          <div class="modal-header">
+            <span class="modal-label">Careers</span>
+            <h2 id="modal-dip-title">Candidatura<br>Dipendente / Operaio</h2>
+          </div>
+          <div data-fs-error style="color:#c0392b;font-size:0.85rem;margin-bottom:1rem;"></div>
+          <form class="modal-form" id="form-dipendente">
+            <input type="hidden" name="_subject" value="Nuova candidatura dipendente — Edily">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="dip-nome" name="nome" required placeholder="Nome e Cognome" data-fs-field>
+                <label for="dip-nome">Nome e Cognome</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="dip-email" name="email" required placeholder="Email" data-fs-field>
+                <label for="dip-email">Email</label>
+                <span data-fs-error="email" style="color:#c0392b;font-size:0.8rem;"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" id="dip-telefono" name="telefono" placeholder="Telefono" pattern="[0-9+\s\-()]{6,20}">
+                <label for="dip-telefono">Telefono</label>
+              </div>
+              <div class="form-group form-group-select">
+                <select id="dip-ruolo" name="ruolo" required>
+                  <option value="" disabled selected></option>
+                  <option value="operaio-specializzato">Operaio Specializzato</option>
+                  <option value="muratore">Muratore</option>
+                  <option value="elettricista">Elettricista</option>
+                  <option value="idraulico">Idraulico</option>
+                  <option value="imbianchino">Imbianchino / Decoratore</option>
+                  <option value="geometra">Geometra</option>
+                  <option value="assistente-cantiere">Assistente di Cantiere</option>
+                  <option value="project-manager">Project Manager</option>
+                  <option value="altro">Altro</option>
+                </select>
+                <label for="dip-ruolo" class="label-select">Ruolo cercato</label>
+              </div>
+            </div>
+            <div class="form-group form-group-select">
+              <select id="dip-esperienza" name="esperienza" required>
+                <option value="" disabled selected></option>
+                <option value="0-2">0 – 2 anni</option>
+                <option value="3-5">3 – 5 anni</option>
+                <option value="6-10">6 – 10 anni</option>
+                <option value="10+">Oltre 10 anni</option>
+              </select>
+              <label for="dip-esperienza" class="label-select">Anni di esperienza</label>
+            </div>
+            <div class="form-group form-group-file">
+              <input type="file" id="dip-cv" name="cv" accept=".pdf,.doc,.docx" class="file-input">
+              <label for="dip-cv" class="file-label">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span class="file-label-main">Allega CV</span>
+                <span class="file-label-sub" id="dip-cv-name">PDF, DOC — max 5MB</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <textarea id="dip-note" name="note" placeholder="Note aggiuntive" rows="3"></textarea>
+              <label for="dip-note">Note aggiuntive</label>
+            </div>
+            <button type="submit" class="btn-primary btn-modal-submit" data-fs-submit-btn>Invia Candidatura</button>
+          </form>
+          <div class="modal-success" id="success-dipendente" data-fs-success hidden>
+            <div class="success-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Candidatura Inviata</h3>
+            <p>Grazie per il tuo interesse. Il team Edily Milano esaminerà il tuo profilo e ti contatterà a breve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: PARTNER COMMERCIALE -->
+    <div class="modal-overlay" id="modal-partner" role="dialog" aria-modal="true" aria-labelledby="modal-par-title">
+      <div class="modal-container">
+        <button class="modal-close" id="close-modal-partner" aria-label="Chiudi">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="modal-body">
+          <div class="modal-header">
+            <span class="modal-label">Partnership</span>
+            <h2 id="modal-par-title">Partner<br>Commerciale</h2>
+          </div>
+          <div data-fs-error style="color:#c0392b;font-size:0.85rem;margin-bottom:1rem;"></div>
+          <form class="modal-form" id="form-partner">
+            <input type="hidden" name="_subject" value="Nuova proposta partnership — Edily">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="par-nome" name="nome" required placeholder="Nome e Cognome" data-fs-field>
+                <label for="par-nome">Nome e Cognome</label>
+              </div>
+              <div class="form-group">
+                <input type="text" id="par-azienda" name="azienda" required placeholder="Azienda / Ragione Sociale" data-fs-field>
+                <label for="par-azienda">Azienda / Ragione Sociale</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" id="par-email" name="email" required placeholder="Email" data-fs-field>
+                <label for="par-email">Email</label>
+                <span data-fs-error="email" style="color:#c0392b;font-size:0.8rem;"></span>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="par-telefono" name="telefono" placeholder="Telefono" pattern="[0-9+\s\-()]{6,20}">
+                <label for="par-telefono">Telefono</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group form-group-select">
+                <select id="par-settore" name="settore" required>
+                  <option value="" disabled selected></option>
+                  <option value="fornitori-materiali">Fornitori Materiali</option>
+                  <option value="subappaltatori">Subappaltatori</option>
+                  <option value="consulenza-tecnica">Consulenza Tecnica / Ingegneria</option>
+                  <option value="real-estate">Real Estate / Sviluppo Immobiliare</option>
+                  <option value="investimento">Investimento / Finanza</option>
+                  <option value="design">Design &amp; Architettura</option>
+                  <option value="altro">Altro</option>
+                </select>
+                <label for="par-settore" class="label-select">Settore di riferimento</label>
+              </div>
+              <div class="form-group">
+                <input type="text" id="par-sito" name="sito" placeholder="Sito Web (https://...)">
+                <label for="par-sito">Sito Web</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea id="par-proposta" name="proposta" required placeholder="Descrivi la collaborazione proposta" rows="4"></textarea>
+              <label for="par-proposta">Collaborazione proposta</label>
+            </div>
+            <button type="submit" class="btn-primary btn-modal-submit" data-fs-submit-btn>Invia Proposta</button>
+          </form>
+          <div class="modal-success" id="success-partner" data-fs-success hidden>
+            <div class="success-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Proposta Inviata</h3>
+            <p>Grazie per il tuo interesse. Il team Edily Milano valuterà la tua proposta e ti contatterà a breve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formspree Ajax -->
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#form-contatti',   formId: 'mvzdjkgy' });
+      formspree('initForm', { formElement: '#form-dipendente', formId: 'mvzdjkgy' });
+      formspree('initForm', { formElement: '#form-partner',    formId: 'mvzdjkgy' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
     <!-- Script dependencies (Lenis for smooth scroll, GSAP for animations) -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>

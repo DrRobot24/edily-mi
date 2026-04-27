@@ -1,3 +1,15 @@
+// Hero Video Sound Toggle
+const heroVideo = document.getElementById('hero-video');
+const soundBtn = document.getElementById('video-sound-btn');
+
+if (heroVideo && soundBtn) {
+  soundBtn.addEventListener('click', () => {
+    heroVideo.muted = !heroVideo.muted;
+    soundBtn.classList.toggle('is-unmuted', !heroVideo.muted);
+    soundBtn.setAttribute('aria-label', heroVideo.muted ? 'Attiva audio' : 'Disattiva audio');
+  });
+}
+
 // Initialize Lenis for Smooth Scrolling
 const lenis = new Lenis({
   duration: 1.2,
@@ -70,7 +82,7 @@ tl.from('.navbar', {
   stagger: 0.2,
   ease: 'power4.out'
 }, "-=1.2")
-.from('.hero-subtitle', {
+.from('.hero-payoff', {
   y: 20,
   opacity: 0,
   duration: 1.5,
@@ -140,3 +152,66 @@ if (mobileBtn) {
     navLinks.classList.toggle('mobile-open');
   });
 }
+
+// ─── LAVORA CON NOI — Modal Logic ────────────────────────────────────────────
+const modals = {
+  dipendente: document.getElementById('modal-dipendente'),
+  partner:    document.getElementById('modal-partner'),
+};
+
+function openModal(key) {
+  const modal = modals[key];
+  if (!modal) return;
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  lenis.stop();
+}
+
+function closeModal(key) {
+  const modal = modals[key];
+  if (!modal) return;
+  modal.classList.remove('is-open');
+  document.body.style.overflow = '';
+  lenis.start();
+  // Reset form to initial state after animation completes
+  setTimeout(() => {
+    const form   = modal.querySelector('.modal-form');
+    const success = modal.querySelector('.modal-success');
+    if (form)    { form.hidden = false; form.reset(); }
+    if (success) { success.hidden = true; }
+    const cvName = modal.querySelector('[id$="-cv-name"]');
+    if (cvName)  { cvName.textContent = 'PDF, DOC — max 5MB'; cvName.classList.remove('has-file'); }
+  }, 400);
+}
+
+document.getElementById('btn-open-dipendente')?.addEventListener('click', () => openModal('dipendente'));
+document.getElementById('btn-open-partner')?.addEventListener('click',    () => openModal('partner'));
+
+document.getElementById('close-modal-dipendente')?.addEventListener('click', () => closeModal('dipendente'));
+document.getElementById('close-modal-partner')?.addEventListener('click',    () => closeModal('partner'));
+
+// Close on backdrop click
+Object.entries(modals).forEach(([key, modal]) => {
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(key); });
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') Object.keys(modals).forEach(closeModal);
+});
+
+// File input — display selected file name and validate size
+document.getElementById('dip-cv')?.addEventListener('change', (e) => {
+  const file    = e.target.files[0];
+  const display = document.getElementById('dip-cv-name');
+  if (!file) return;
+  if (file.size > 5 * 1024 * 1024) {
+    alert('Il file supera i 5MB. Seleziona un file più piccolo.');
+    e.target.value = '';
+    display.textContent = 'PDF, DOC — max 5MB';
+    display.classList.remove('has-file');
+    return;
+  }
+  display.textContent = file.name;
+  display.classList.add('has-file');
+});
