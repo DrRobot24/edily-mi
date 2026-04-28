@@ -106,7 +106,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.2rem 0;
+  padding: 1.6rem 0 0.6rem 0;
   z-index: 1000;
   background-color: transparent;
   border-bottom: 1px solid transparent;
@@ -157,8 +157,8 @@ a {
 }
 
 .brand-logo {
-  height: 150px;
-  max-width: 350px;
+  height: 85px;
+  max-width: 220px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -645,7 +645,7 @@ a {
 /* Footer */
 .footer {
   background-color: #000;
-  padding: 4rem 0 2rem;
+  padding: 1.8rem 0 1.2rem;
   color: #fff;
 }
 
@@ -661,7 +661,7 @@ a {
 }
 
 .footer-logo-img {
-  height: 100px;
+  height: 55px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -1079,6 +1079,49 @@ a {
   color: #888;
   max-width: 400px;
   margin: 0 auto;
+}
+
+/* LAVORA CON NOI SECTION */
+.lavora-section-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 2.5rem;
+  padding-top: 2rem;
+}
+
+.lavora-section-intro {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+.lavora-btns-large {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.btn-lavora {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: 1.4rem 2rem;
+  font-size: 0.9rem;
+}
+
+.dark-section .btn-outline {
+  color: rgba(255,255,255,0.85);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.dark-section .btn-outline:hover {
+  color: #fff;
 }
 
 /* Responsive basics */

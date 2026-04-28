@@ -183,6 +183,8 @@ function closeModal(key) {
 
 document.getElementById('btn-open-dipendente')?.addEventListener('click', () => openModal('dipendente'));
 document.getElementById('btn-open-partner')?.addEventListener('click',    () => openModal('partner'));
+document.getElementById('btn-open-dipendente-2')?.addEventListener('click', () => openModal('dipendente'));
+document.getElementById('btn-open-partner-2')?.addEventListener('click',    () => openModal('partner'));
 
 document.getElementById('close-modal-dipendente')?.addEventListener('click', () => closeModal('dipendente'));
 document.getElementById('close-modal-partner')?.addEventListener('click',    () => closeModal('partner'));
