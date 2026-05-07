@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://www.tecmasolutions.com\")",
+      "Bash(curl -s -L \"https://www.coderful.io/wp-content/themes/coderful-24/css-legacy.css\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s -L \"https://www.coderful.io\" -H \"User-Agent: Mozilla/5.0\")"
+    ]
+  }
+}

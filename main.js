@@ -47,7 +47,7 @@ const navbarObserver = new IntersectionObserver(
   ([entry]) => {
     navbar.classList.toggle('visible', !entry.isIntersecting);
   },
-  { threshold: 0.85 }
+  { threshold: 0 }
 );
 navbarObserver.observe(heroSection);
 
@@ -72,14 +72,7 @@ gsap.set('.hero-content h1 span', { opacity: 0, y: 150, skewY: 10 });
 gsap.set('.hero-payoff', { opacity: 0, y: 20 });
 gsap.set('.hero-scroll-indicator', { opacity: 0, y: 50 });
 
-tl.from('.navbar', {
-  y: -50,
-  opacity: 0,
-  duration: 1.5,
-  ease: 'power4.out',
-  delay: 0.2
-})
-.fromTo('.hero-content h1 span',
+tl.fromTo('.hero-content h1 span',
   { y: 150, skewY: 10, opacity: 0 },
   { y: 0, skewY: 0, opacity: 1, duration: 1.8, stagger: 0.2, ease: 'power4.out' },
   "-=1.2")
