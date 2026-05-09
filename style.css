@@ -384,11 +384,11 @@ a {
 }
 
 .hero-payoff {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.75);
   font-family: var(--font-body);
-  font-size: clamp(0.65rem, 0.9vw, 0.82rem);
-  font-weight: 300;
-  letter-spacing: 0.4em;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   margin-top: 2rem;
   text-align: center;
