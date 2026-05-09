@@ -133,8 +133,8 @@ if (prefersReducedMotion) {
       ease: 'power4.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
+        start: 'top 88%',
+        toggleActions: 'play none none none'
       }
     });
   });
