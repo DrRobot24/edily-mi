@@ -141,7 +141,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0.8rem 0;
+  padding: 0.45rem 0;
   z-index: 1000;
   background-color: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -857,6 +857,25 @@ a {
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.35);
   margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footer-legal-link {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease;
+}
+
+.footer-legal-link:hover {
+  color: var(--color-accent);
 }
 
 /* ─── UTILS ──────────────────────────────────────────────────────────────── */
