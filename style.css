@@ -1025,6 +1025,70 @@ a {
   stroke: var(--color-accent);
 }
 
+/* ─── SOCIAL COMPACT (Contatti) ──────────────────────────────────────────── */
+.social-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-compact-link {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-compact-link:hover {
+  opacity: 0.75;
+}
+
+.social-compact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.social-compact-icon--instagram {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-compact-icon--linkedin {
+  background: #0A66C2;
+}
+
+.social-compact-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-compact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.social-compact-name {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-light);
+}
+
+.social-compact-handle {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(240, 240, 238, 0.5);
+}
+
 /* ─── LAVORA CON NOI ─────────────────────────────────────────────────────── */
 .lavora-wrapper {
   border-top: 1px solid var(--color-border);
