@@ -515,15 +515,16 @@ a {
 .about-image-wrapper::after {
   content: '';
   position: absolute;
-  inset: 0;
-  border: 1px solid rgba(166, 139, 97, 0);
-  transition: border-color 0.8s ease;
+  inset: 14px;
+  border: 1px solid rgba(166, 139, 97, 0.4);
+  transition: border-color 0.6s ease, inset 0.6s var(--ease-out-expo);
   pointer-events: none;
   z-index: 2;
 }
 
 .about-image-wrapper:hover::after {
-  border-color: rgba(166, 139, 97, 0.35);
+  border-color: rgba(166, 139, 97, 0.75);
+  inset: 10px;
 }
 
 .about-image {
