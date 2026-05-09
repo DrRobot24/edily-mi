@@ -20,6 +20,27 @@
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
+/* ─── SKIP LINK ──────────────────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -664,7 +685,7 @@ a {
   margin-top: 4rem;
 }
 
-.contact-block h4 {
+.contact-block h3 {
   font-family: var(--font-body);
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -1446,5 +1467,94 @@ a {
 
   .payoff-section::before {
     display: none;
+  }
+}
+
+/* ─── TABLET (768px) ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 5rem;
+    --space-lg: 2.5rem;
+  }
+
+  h1 { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+  h2 { font-size: clamp(2rem, 8vw, 3rem); }
+
+  .hero { min-height: 600px; }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-img-wrapper {
+    height: 55vw;
+  }
+
+  .about-image-wrapper {
+    height: 60vw;
+  }
+
+  .modal-container {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+    max-height: 100dvh;
+  }
+
+  .social-editorial {
+    flex-direction: column;
+  }
+}
+
+/* ─── MOBILE SMALL (480px) ───────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  :root {
+    --space-xl: 4rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  h1 { font-size: clamp(1.9rem, 12vw, 2.8rem); }
+  h2 { font-size: clamp(1.7rem, 9vw, 2.4rem); }
+
+  .hero-title { letter-spacing: 0.06em; }
+
+  .btn-lavora {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-container {
+    gap: 1.5rem;
+  }
+
+  .project-img-wrapper {
+    height: 65vw;
+  }
+
+  .about-image-wrapper {
+    height: 70vw;
+  }
+}
+
+/* ─── PREFERS REDUCED MOTION ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-scroll-indicator .line::after {
+    animation: none;
   }
 }

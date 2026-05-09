@@ -1,3 +1,5 @@
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // Hero Video Sound Toggle
 const heroVideo = document.getElementById('hero-video');
 const soundBtn = document.getElementById('video-sound-btn');
@@ -12,11 +14,11 @@ if (heroVideo && soundBtn) {
 
 // Initialize Lenis for Smooth Scrolling
 const lenis = new Lenis({
-  duration: 1.2,
+  duration: prefersReducedMotion ? 0 : 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   direction: 'vertical',
   gestureDirection: 'vertical',
-  smooth: true,
+  smooth: !prefersReducedMotion,
   mouseMultiplier: 1,
   smoothTouch: false,
   touchMultiplier: 2,
@@ -65,72 +67,78 @@ darkSections.forEach(section => {
 
 
 // Initial Load Animation
-const tl = gsap.timeline();
-
-// Hide hero elements immediately before any frame renders (prevents flash)
-gsap.set('.hero-content h1 span', { opacity: 0, y: 150, skewY: 10 });
-gsap.set('.hero-payoff', { opacity: 0, y: 20 });
-gsap.set('.hero-scroll-indicator', { opacity: 0, y: 50 });
-
-tl.fromTo('.hero-content h1 span',
-  { y: 150, skewY: 10, opacity: 0 },
-  { y: 0, skewY: 0, opacity: 1, duration: 1.8, stagger: 0.2, ease: 'power4.out' },
-  "-=1.2")
-.fromTo('.hero-payoff',
-  { y: 20, opacity: 0 },
-  { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
-  "-=1.5")
-.fromTo('.hero-scroll-indicator',
-  { y: 50, opacity: 0 },
-  { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
-  "-=1.5");
-
-// Parallax Images
-gsap.utils.toArray('.parallax-img').forEach(img => {
-  gsap.to(img, {
-    yPercent: 30,
-    ease: "none",
-    scrollTrigger: {
-      trigger: img.parentElement,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    }
+if (prefersReducedMotion) {
+  // Skip all GSAP intro animations — elements already visible via CSS
+  gsap.set('.hero-content h1 span, .hero-payoff, .hero-scroll-indicator', { opacity: 1, y: 0, skewY: 0 });
+  document.querySelectorAll('.scroll-reveal').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
   });
-});
+} else {
+  const tl = gsap.timeline();
 
-gsap.utils.toArray('.parallax-img-slow').forEach(img => {
-  gsap.to(img, {
-    yPercent: 15,
-    ease: "none",
-    scrollTrigger: {
-      trigger: img.parentElement,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
-    }
+  gsap.set('.hero-content h1 span', { opacity: 0, y: 150, skewY: 10 });
+  gsap.set('.hero-payoff', { opacity: 0, y: 20 });
+  gsap.set('.hero-scroll-indicator', { opacity: 0, y: 50 });
+
+  tl.fromTo('.hero-content h1 span',
+    { y: 150, skewY: 10, opacity: 0 },
+    { y: 0, skewY: 0, opacity: 1, duration: 1.8, stagger: 0.2, ease: 'power4.out' },
+    "-=1.2")
+  .fromTo('.hero-payoff',
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
+    "-=1.5")
+  .fromTo('.hero-scroll-indicator',
+    { y: 50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
+    "-=1.5");
+
+  // Parallax Images
+  gsap.utils.toArray('.parallax-img').forEach(img => {
+    gsap.to(img, {
+      yPercent: 30,
+      ease: "none",
+      scrollTrigger: {
+        trigger: img.parentElement,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
   });
-});
 
-// Scroll Reveal Items
-const revealElements = document.querySelectorAll('.scroll-reveal');
-
-revealElements.forEach((el) => {
-  gsap.fromTo(el, {
-    y: 100,
-    opacity: 0
-  }, {
-    y: 0,
-    opacity: 1,
-    duration: 1.5,
-    ease: 'power4.out',
-    scrollTrigger: {
-      trigger: el,
-      start: 'top 85%', // Trigger when element is 85% down viewport
-      toggleActions: 'play none none reverse'
-    }
+  gsap.utils.toArray('.parallax-img-slow').forEach(img => {
+    gsap.to(img, {
+      yPercent: 15,
+      ease: "none",
+      scrollTrigger: {
+        trigger: img.parentElement,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
   });
-});
+
+  // Scroll Reveal Items
+  document.querySelectorAll('.scroll-reveal').forEach((el) => {
+    gsap.fromTo(el, {
+      y: 100,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+}
 
 // Mobile menu toggle
 const mobileBtn = document.getElementById('mobile-menu-toggle');
@@ -138,8 +146,9 @@ const navLinks = document.querySelector('.nav-links');
 
 if (mobileBtn) {
   mobileBtn.addEventListener('click', () => {
-    mobileBtn.classList.toggle('active');
-    navLinks.classList.toggle('mobile-open');
+    const isOpen = navLinks.classList.toggle('mobile-open');
+    mobileBtn.classList.toggle('active', isOpen);
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
   });
 }
 
@@ -149,20 +158,47 @@ const modals = {
   partner:    document.getElementById('modal-partner'),
 };
 
+const FOCUSABLE = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+const trapCleanup = {};
+let lastFocusedEl = null;
+
+function trapFocus(modal) {
+  const focusable = [...modal.querySelectorAll(FOCUSABLE)];
+  if (!focusable.length) return () => {};
+  focusable[0].focus();
+
+  function handler(e) {
+    if (e.key !== 'Tab') return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { last.focus(); e.preventDefault(); }
+    } else {
+      if (document.activeElement === last) { first.focus(); e.preventDefault(); }
+    }
+  }
+  modal.addEventListener('keydown', handler);
+  return () => modal.removeEventListener('keydown', handler);
+}
+
 function openModal(key) {
   const modal = modals[key];
   if (!modal) return;
+  lastFocusedEl = document.activeElement;
   modal.classList.add('is-open');
   document.body.style.overflow = 'hidden';
   lenis.stop();
+  trapCleanup[key] = trapFocus(modal);
 }
 
 function closeModal(key) {
   const modal = modals[key];
   if (!modal) return;
+  if (trapCleanup[key]) { trapCleanup[key](); delete trapCleanup[key]; }
   modal.classList.remove('is-open');
   document.body.style.overflow = '';
   lenis.start();
+  if (lastFocusedEl) { lastFocusedEl.focus(); lastFocusedEl = null; }
   // Reset form to initial state after animation completes
   setTimeout(() => {
     const form   = modal.querySelector('.modal-form');

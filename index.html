@@ -16,6 +16,8 @@
     <meta property="og:description" content="Sviluppo Immobiliare e Costruzioni d'eccellenza. Design, eleganza e perfezione architettonica a Milano." />
     <meta property="og:image" content="https://edily-mi.vercel.app/images/og-preview.jpg" />
     <meta property="og:locale" content="it_IT" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -63,6 +65,7 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
     <!-- Navigation -->
     <nav class="navbar">
       <div class="navbar-container">
@@ -76,19 +79,19 @@
           <a href="#lavora" class="nav-link">Lavora con Noi</a>
           <a href="#contatti" class="nav-link">Contatti</a>
         </div>
-        <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-toggle">
+        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" id="mobile-menu-toggle">
           <span></span>
           <span></span>
         </button>
       </div>
     </nav>
 
-    <main data-scroll-container>
+    <main id="main-content" data-scroll-container>
       
       <!-- HERO SECTION -->
       <section id="hero" class="hero section">
         <div class="hero-bg">
-          <video class="hero-video" id="hero-video" autoplay muted loop playsinline>
+          <video class="hero-video" id="hero-video" autoplay muted loop playsinline poster="/images/og-preview.jpg">
             <source src="/images/video.mp4" type="video/mp4">
           </video>
           <div class="hero-overlay"></div>
@@ -112,7 +115,7 @@
         <div class="container">
           <div class="about-grid">
             <div class="about-text scroll-reveal">
-              <h4 class="section-subtitle">About Us</h4>
+              <p class="section-subtitle">About Us</p>
               <h2 class="section-title">Ridefiniamo lo Spazio, <br>Eleviamo lo Stile.</h2>
               <div class="mission-vision-wrapper">
                 <div class="mv-block">
@@ -136,7 +139,7 @@
       <section id="progetti" class="progetti section dark-section">
         <div class="container">
           <div class="section-header scroll-reveal">
-            <h4 class="section-subtitle">Portfolio</h4>
+            <p class="section-subtitle">Portfolio</p>
             <h2 class="section-title">Progetti Selezionati</h2>
           </div>
           <div class="projects-gallery">
@@ -192,7 +195,7 @@
       <section id="servizi" class="servizi section">
         <div class="container">
           <div class="section-header scroll-reveal">
-            <h4 class="section-subtitle">Expertise</h4>
+            <p class="section-subtitle">Expertise</p>
             <h2 class="section-title">I Nostri Servizi</h2>
           </div>
           <div class="services-grid">
@@ -223,15 +226,15 @@
               <h2 class="section-title">Inizia <br>il tuo Progetto.</h2>
               <div class="contact-details">
                 <div class="contact-block">
-                  <h4>Sede Centrale</h4>
+                  <h3>Sede Centrale</h3>
                   <p>Via Eleonora Fonseca Pimentel, 18<br>20127 Milano (MI)</p>
                 </div>
                 <div class="contact-block">
-                  <h4>Contatti</h4>
+                  <h3>Contatti</h3>
                   <p>Email: edilymilano@gmail.com<br>Cell: 392.393 0476 &nbsp;|&nbsp; Tel: 02.82065770</p>
                 </div>
                 <div class="contact-block">
-                  <h4>Dati Societari</h4>
+                  <h3>Dati Societari</h3>
                   <p>Edily srls &mdash; P.IVA/C.F. 13609240968<br>Cod. Univoco: W7YVJK9</p>
                 </div>
               </div>
@@ -288,11 +291,11 @@
               <h2 class="section-title">Lavora<br>con Noi.</h2>
               <div class="contact-details">
                 <div class="contact-block">
-                  <h4>Candidatura</h4>
+                  <h3>Candidatura</h3>
                   <p>Entra a far parte del team Edily. Professionisti, operai specializzati e figure tecniche.</p>
                 </div>
                 <div class="contact-block">
-                  <h4>Partnership</h4>
+                  <h3>Partnership</h3>
                   <p>Proponi una collaborazione strategica: fornitori, subappaltatori, consulenti, investitori.</p>
                 </div>
               </div>
@@ -486,16 +489,15 @@
     <!-- Formspree Ajax -->
     <script>
       window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-      formspree('initForm', { formElement: '#form-contatti',   formId: 'mvzdjkgy' });
       formspree('initForm', { formElement: '#form-dipendente', formId: 'mvzdjkgy' });
       formspree('initForm', { formElement: '#form-partner',    formId: 'mvzdjkgy' });
     </script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
     <!-- Script dependencies (Lenis for smooth scroll, GSAP for animations) -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js" integrity="sha384-o/NmTUMyj0xBXquK9mLCg/ER0KlJxjnA/2fPgeg6H5acZfxPTGuWiwDSnPZxw/8o" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" defer></script>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
