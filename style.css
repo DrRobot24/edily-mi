@@ -631,8 +631,8 @@ a {
 .project-photos-grid {
   display: grid;
   grid-template-columns: 1.65fr 1fr;
-  gap: 3px;
-  background: var(--color-accent);
+  gap: 15px;
+  background: #ffffff;
   height: 80vh;
   width: calc(100% + 10vw);
   margin-left: -5vw;
@@ -671,8 +671,8 @@ a {
 .photo-secondary {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 3px;
-  background: var(--color-accent);
+  gap: 15px;
+  background: #ffffff;
 }
 
 .photo-secondary--single {
