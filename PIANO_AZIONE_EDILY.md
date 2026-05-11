@@ -2,7 +2,7 @@
 
 > **Documento generato il:** 17 Aprile 2026  
 > **Repository:** `DrRobot24/edily-mi`  
-> **Deploy:** [edily-mi.vercel.app](https://edily-mi.vercel.app)  
+> **Deploy:** [www.edilymilano.com](https://www.edilymilano.com)  
 > **Stack attuale:** Vanilla JS · Vite 8 · GSAP · Lenis · CSS Custom
 
 ---
@@ -132,22 +132,22 @@ dist/
 ```html
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://edily-mi.vercel.app/" />
+<meta property="og:url" content="https://www.edilymilano.com/" />
 <meta property="og:title" content="Edily Milano | Luxury Construction & Real Estate" />
 <meta property="og:description" content="Sviluppo Immobiliare e Costruzioni d'eccellenza. Design, eleganza e perfezione architettonica a Milano." />
-<meta property="og:image" content="https://edily-mi.vercel.app/images/og-preview.jpg" />
+<meta property="og:image" content="https://www.edilymilano.com/images/og-preview.jpg" />
 <meta property="og:locale" content="it_IT" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Edily Milano | Luxury Construction & Real Estate" />
 <meta name="twitter:description" content="Sviluppo Immobiliare e Costruzioni d'eccellenza a Milano." />
-<meta name="twitter:image" content="https://edily-mi.vercel.app/images/og-preview.jpg" />
+<meta name="twitter:image" content="https://www.edilymilano.com/images/og-preview.jpg" />
 
 <!-- Extra SEO -->
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Edily srls" />
-<link rel="canonical" href="https://edily-mi.vercel.app/" />
+<link rel="canonical" href="https://www.edilymilano.com/" />
 ```
 
 **Azione aggiuntiva:**
@@ -327,7 +327,7 @@ window.addEventListener('load', () => {
   "@type": "LocalBusiness",
   "name": "Edily srls",
   "description": "Sviluppo Immobiliare e Costruzioni d'eccellenza a Milano",
-  "url": "https://edily-mi.vercel.app",
+  "url": "https://www.edilymilano.com",
   "telephone": "",
   "email": "edilymilano@gmail.com",
   "address": {
@@ -372,14 +372,14 @@ ffmpeg -i cassia.mp4 -vcodec libx264 -crf 28 -preset slow -vf scale=1920:-2 cass
 
 ---
 
-### 12. Dominio Personalizzato
-**Problema:** Il sito è ancora su `edily-mi.vercel.app` — non professionale per un'azienda reale.
+### 12. ✅ Dominio Personalizzato
+**Problema:** Il sito era su un sottodominio vercel, non professionale per un'azienda reale.
 
-**Azioni:**
-1. Acquistare dominio (es. `edilymilano.it` o `edily.it`)
-2. Configurare su Vercel: Settings → Domains → Add
-3. Aggiornare tutti i meta tag con il nuovo URL
-4. Impostare redirect da `www` a root (o viceversa)
+**Stato: COMPLETATO**
+1. ✅ Acquistato dominio `www.edilymilano.com`
+2. ✅ Configurato su Vercel: Settings → Domains → Add
+3. ✅ Aggiornati tutti i meta tag con il nuovo URL
+4. ✅ SSL e redirect attivati correttamente
 
 ---
 
@@ -402,7 +402,7 @@ SETTIMANA 3-4
 ├── 📋 Privacy Policy + Cookie Banner (#9)
 ├── 📋 Schema.org structured data (#10)
 ├── 📋 Ottimizzazione immagini/video (#11)
-└── 📋 Dominio personalizzato (#12)
+└── ✅ Dominio personalizzato (#12)
 ```
 
 ---
