@@ -894,6 +894,23 @@ a {
   margin: 0;
 }
 
+.footer-credits {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0.5rem 0 0 0;
+}
+
+.footer-credits a {
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+}
+
+.footer-credits a:hover {
+  color: var(--color-accent);
+}
+
+
 .footer-legal {
   display: flex;
   gap: 1.5rem;
