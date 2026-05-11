@@ -172,7 +172,7 @@ a {
 .nav-link {
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: rgba(255, 255, 255, 0.9);
@@ -186,6 +186,7 @@ a {
 .navbar.scrolled .nav-link {
   color: #1a1a1a;
   text-shadow: none;
+  font-weight: 700;
 }
 
 .nav-link::after {
