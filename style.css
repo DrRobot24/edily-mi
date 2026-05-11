@@ -1420,8 +1420,10 @@ a {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #ffffff;
+  color: #ffffff !important;
   pointer-events: none;
+  opacity: 1 !important;
+  display: block !important;
 }
 
 .form-group-file {
@@ -1479,6 +1481,14 @@ a {
   width: 100%;
   text-align: center;
   margin-top: 0;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: transparent;
+}
+
+.btn-modal-submit:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .modal-success {
