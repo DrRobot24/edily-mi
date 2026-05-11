@@ -1288,7 +1288,7 @@ a {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  color: var(--color-accent);
+  color: #ffffff;
   display: block;
   margin-bottom: 1rem;
 }
@@ -1337,7 +1337,7 @@ a {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #555;
+  color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
   transition: all 0.3s ease;
   opacity: 0;
@@ -1349,13 +1349,13 @@ a {
 .modal-form .form-group textarea:not(:placeholder-shown) ~ label {
   top: -12px;
   font-size: 0.68rem;
-  color: var(--color-accent);
+  color: #ffffff;
   opacity: 1;
 }
 
 .modal-form .form-group input::placeholder,
 .modal-form .form-group textarea::placeholder {
-  color: #444;
+  color: rgba(255, 255, 255, 0.35);
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.1em;
@@ -1377,7 +1377,7 @@ a {
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding: 1rem 2rem 1rem 0;
-  color: #555;
+  color: var(--color-text-light);
   font-family: var(--font-body);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -1420,7 +1420,7 @@ a {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-accent);
+  color: #ffffff;
   pointer-events: none;
 }
 
@@ -1447,7 +1447,7 @@ a {
   gap: 1rem;
   padding: 1.2rem 1.5rem;
   cursor: pointer;
-  color: #555;
+  color: var(--color-text-light);
   transition: color 0.3s;
 }
 
@@ -1484,6 +1484,8 @@ a {
 .modal-success {
   text-align: center;
   padding: 5rem 2rem;
+  background: #d4edda;
+  border-radius: 12px;
 }
 
 .modal-success[hidden] { display: none; }
@@ -1491,7 +1493,7 @@ a {
 .success-icon {
   width: 4rem;
   height: 4rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid #155724;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1502,17 +1504,17 @@ a {
 .success-icon svg {
   width: 1.5rem;
   height: 1.5rem;
-  stroke: var(--color-accent);
+  stroke: #155724;
 }
 
 .modal-success h3 {
-  color: var(--color-text-light);
+  color: #155724;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .modal-success p {
-  color: #666;
+  color: #155724;
   max-width: 400px;
   margin: 0 auto;
 }
