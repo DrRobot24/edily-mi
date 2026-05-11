@@ -43,11 +43,11 @@ const body = document.querySelector('body');
 const darkSections = document.querySelectorAll('.dark-section, .hero, .footer');
 const navbar = document.querySelector('.navbar');
 
-// Navbar slides down when user starts scrolling
+// Navbar: transparent on hero, solid when scrolled
 const heroSection = document.querySelector('#hero');
 const navbarObserver = new IntersectionObserver(
   ([entry]) => {
-    navbar.classList.toggle('visible', !entry.isIntersecting);
+    navbar.classList.toggle('scrolled', !entry.isIntersecting);
   },
   { threshold: 0 }
 );
