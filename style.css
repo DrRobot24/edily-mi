@@ -482,9 +482,7 @@ a {
 
 /* ─── ABOUT ──────────────────────────────────────────────────────────────── */
 .about-intro {
-  max-width: 800px;
-  margin: 0 auto 5rem;
-  text-align: center;
+  margin-bottom: 5rem;
 }
 
 .about-story {
@@ -503,7 +501,7 @@ a {
 }
 
 .about-triptych .mv-block:first-child {
-  text-align: right;
+  text-align: left;
 }
 
 .about-image-wrapper {
@@ -548,6 +546,24 @@ a {
   font-weight: 700;
 }
 
+/* ─── SECTION TITLE DECORATION ──────────────────────────────────────────── */
+.section-title {
+  position: relative;
+  padding-bottom: 1.2rem;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.5rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
 /* ─── PROGETTI ───────────────────────────────────────────────────────────── */
 .section-header {
   margin-bottom: 5rem;
@@ -572,21 +588,21 @@ a {
 }
 
 .project-type-label {
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-accent);
-  font-weight: 700;
-}
-
-.project-name-title {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 300;
   font-style: italic;
   color: var(--color-text-light);
   line-height: 1.1;
+}
+
+.project-name-title {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+  font-weight: 700;
 }
 
 .project-location-label {
@@ -603,8 +619,10 @@ a {
   display: grid;
   grid-template-columns: 1.65fr 1fr;
   gap: 3px;
-  background: #1c1c1c;
-  height: 62vh;
+  background: var(--color-accent);
+  height: 80vh;
+  width: calc(100% + 10vw);
+  margin-left: -5vw;
 }
 
 .project-item--reverse .project-photos-grid {
@@ -641,7 +659,7 @@ a {
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 3px;
-  background: #1c1c1c;
+  background: var(--color-accent);
 }
 
 .photo-secondary img {
@@ -1507,6 +1525,8 @@ a {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     height: auto;
+    width: 100%;
+    margin-left: 0;
   }
 
   .project-item--reverse .photo-main,
