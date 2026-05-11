@@ -425,7 +425,7 @@
             </div>
             <div class="form-row">
               <div class="form-group">
-                <input type="tel" id="dip-telefono" name="telefono" placeholder="Telefono" pattern="[0-9+\s\-()]{6,20}">
+                <input type="tel" id="dip-telefono" name="telefono" required placeholder="Telefono" pattern="[0-9+\s\-()]{6,20}">
                 <label for="dip-telefono">Telefono</label>
               </div>
               <div class="form-group form-group-select">
@@ -455,7 +455,7 @@
               <label for="dip-esperienza" class="label-select">Anni di esperienza</label>
             </div>
             <div class="form-group form-group-file">
-              <input type="file" id="dip-cv" name="cv" accept=".pdf,.doc,.docx" class="file-input">
+              <input type="file" id="dip-cv" name="cv" required accept=".pdf,.doc,.docx" class="file-input">
               <label for="dip-cv" class="file-label">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                 <span class="file-label-main">Allega CV</span>
@@ -463,7 +463,7 @@
               </label>
             </div>
             <div class="form-group">
-              <textarea id="dip-note" name="note" placeholder="Note aggiuntive" rows="3"></textarea>
+              <textarea id="dip-note" name="note" required placeholder="Note aggiuntive" rows="3"></textarea>
               <label for="dip-note">Note aggiuntive</label>
             </div>
             <button type="submit" class="btn-primary btn-modal-submit" data-fs-submit-btn>Invia Candidatura</button>
@@ -510,7 +510,7 @@
                 <span data-fs-error="email" style="color:#c0392b;font-size:0.8rem;"></span>
               </div>
               <div class="form-group">
-                <input type="tel" id="par-telefono" name="telefono" placeholder="Telefono" pattern="[0-9+\s\-()]{6,20}">
+                <input type="tel" id="par-telefono" name="telefono" required placeholder="Telefono" pattern="[0-9+\s\-()]{6,20}">
                 <label for="par-telefono">Telefono</label>
               </div>
             </div>
@@ -529,7 +529,7 @@
                 <label for="par-settore" class="label-select">Settore di riferimento</label>
               </div>
               <div class="form-group">
-                <input type="text" id="par-sito" name="sito" placeholder="Sito Web (https://...)">
+                <input type="text" id="par-sito" name="sito" required placeholder="Sito Web (https://...)">
                 <label for="par-sito">Sito Web</label>
               </div>
             </div>
