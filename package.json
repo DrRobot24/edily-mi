@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "sharp": "^0.34.5",
     "vite": "^8.0.8"
   },
   "dependencies": {
